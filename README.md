@@ -1,24 +1,24 @@
-# (replace-me: Exercise title)
-
-_(replace-me: One-line description of the exercise)_
+# GitHub Copilot modernize my legacy code
 
 ## Welcome
 
-- **Who is this for**: (replace-me: Target audience description)
-- **What you'll learn**: (replace-me: Learning objectives)
-- **What you'll build**: (replace-me: Description of what the learner will create)
+- **Who is this for**: Developers looking to update and improve their legacy codebases.
+- **What you'll learn**: How to leverage GitHub Copilot to refactor and modernize existing code.
+- **What you'll build**: A set of improved code snippets that demonstrate modern coding practices.
 - **Prerequisites**:
-  - (replace-me: Prerequisite skill/exercise)
-  - (replace-me: Other prerequisites)
+  - Skills exercise: [Getting started with GitHub Copilot](https://github.com/skills/getting-started-with-github-copilot)
+  - Familiarity with [VS Code](https://code.visualstudio.com/)
+  - Basic coding principles
 
-- **How long**: This exercise takes less than (replace-me: estimated time) to complete.
+- **How long**: This exercise takes less than 30 minutes to complete.
 
 In this exercise, you will:
 
-1. (replace-me: Learning objective step #1)
-1. (replace-me: Learning objective step #2)
-1. (replace-me: Learning objective step #N)
-
+1. Explain the current state of your legacy code.
+1. Create a diagram of the data flow in your code.
+1. Identify areas of your legacy code that can be improved.
+1. Use GitHub Copilot to generate modern code snippets.
+1. Replace the old code with the new snippets and test the changes.
 
 ### How to start this exercise
 

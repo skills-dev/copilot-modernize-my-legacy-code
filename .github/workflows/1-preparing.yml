@@ -1,15 +1,10 @@
-name: Step 1
-
-
+name: Step 1 # Preparing to modernize legacy code
 
 on:
   workflow_dispatch:
-  # Common event triggers: pull_request, push, issues, issue_comment (feel free to experiment)
-  # Docs: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
-  # Example:
-  # pull_request:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - "modernize-legacy-code"
 
 permissions:
   contents: read
@@ -17,12 +12,12 @@ permissions:
   issues: write
 
 env:
-  STEP_2_FILE: ".github/steps/2-step.md"
+  STEP_2_FILE: ".github/steps/2-explain-legacy-code.md"
 
 jobs:
   find_exercise:
     name: Find Exercise Issue
-    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.4.0
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.6.0
 
   check_step_work:
     name: Check step work
@@ -40,11 +35,20 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.4.0
+          ref: v0.6.0
+
+      - name: Update comment - checking work
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file exercise-toolkit/markdown-templates/step-feedback/checking-work.md \
+            --edit-last
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # START: Check practical exercise
 
-      # (replace-me: Add verification steps here if needed)
+      # Nothing to verify. Creating the branch is enough for now.
+      # In a future update, we will check that the codespace is running and that the website is visible.
 
       # END: Check practical exercise
 
@@ -59,7 +63,8 @@ jobs:
       - name: Update comment - step finished
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body "$ISSUE_BODY"
+            --body "$ISSUE_BODY" \
+            --edit-last
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_BODY: ${{ steps.build-message-step-finish.outputs.updated-text }}
@@ -80,7 +85,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.4.0
+          ref: v0.6.0
 
       - name: Create comment - add step content
         run: |
