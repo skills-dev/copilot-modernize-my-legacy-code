@@ -1,4 +1,4 @@
-## Step 3: Convert the legacy COBOL code to Node.js
+## Step 4: Convert the legacy COBOL code to Node.js
 
 In this step, you'll begin the process of converting the legacy COBOL accounting system to a modern Node.js application. This involves translating the existing COBOL code into JavaScript, setting up the project structure, and ensuring that the new implementation maintains the same functionality as the original system.
 
@@ -16,8 +16,9 @@ In this step, you'll begin the process of converting the legacy COBOL accounting
   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
   >
   > ```prompt
-  > @workspace convert the three separate COBOL legacy files into a single Node.js accounting application while preserving the original business logic and data integrity.
-  > Create the Node.js app under the src/accounting directory and install all prerequisites.
+  > @workspace convert the three separate COBOL legacy files into a single Node.js index.js accounting application while preserving the original business logic and data integrity, and menu options of the original application.
+  > Create the Node.js app under the src/accounting directory and install all prerequisites to run the application for Node.js in directory src/accounting.
+  > Create a .vscode/launch.json file to run the Node.js application with the command `node src/accounting/index.js`.
   >
   > ```
 
