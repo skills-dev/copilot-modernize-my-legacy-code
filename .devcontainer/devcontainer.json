@@ -13,7 +13,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "GitHub.copilot-insiders",
+        "GitHub.copilot",
         "dbaeumer.vscode-eslint",
         "DavidAnson.vscode-markdownlint",
         "bierner.markdown-mermaid",
