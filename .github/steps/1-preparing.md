@@ -89,8 +89,14 @@ Great work! Now that we are familiar with the app and we know it works, let's as
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
+
+If you don't get feedback, here are some things to check:
+
 - If you don't see the Copilot icon, make sure you have the GitHub Copilot extension installed and enabled.
 - If you don't see the Copilot chat panel, try reloading the codespace or checking your extension settings.
 - If Copilot doesn't understand your command, try rephrasing it or providing more context.
 - If you encounter any issues with the terminal, make sure you have the correct permissions to create branches in the repository.
+- Make sure you created the branch with the exact name `modernize-legacy-code`. No prefixes or suffixes.
+- Make sure the branch was indeed published to your repository.
+
 </details>

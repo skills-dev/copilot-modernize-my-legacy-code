@@ -1,4 +1,4 @@
-# GitHub Copilot modernize my Legacy Code
+# GitHub Copilot Modernize my Legacy Code
 
 ## Welcome
 
