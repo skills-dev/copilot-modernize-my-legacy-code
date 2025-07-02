@@ -13,7 +13,7 @@ permissions:
   issues: write
 
 env:
-  REVIEW_FILE: ".github/steps/4-convert-the-app.md"
+  STEP_3_FILE: ".github/steps/4-convert-the-app.md"
 
 jobs:
   find_exercise:
@@ -103,7 +103,7 @@ jobs:
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
           template-vars: |
-            next_step_number: 3
+            next_step_number: 4
 
       - name: Update comment - step finished
         run: |
