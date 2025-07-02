@@ -11,7 +11,7 @@ In the following activies we will build and run the COBOL accounting application
  > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
   >
   > ```prompt
-  > @workspace Using our custom Copilot instructions, please build and run the COBOL application using the provided source code and sample data. Make sure the application is in the root of the repository with the name accountsystem.
+  > #codebase using our custom Copilot instructions, please build and run the COBOL application using the provided source code and sample data. Make sure the application is in the root of the repository with the name accountsystem.
   > ```
 
 Try playing with the different options of the COBOL accounting app and when you are done select option `4` to exit.
@@ -23,9 +23,9 @@ Given the features of our existing legacy accounting system we want to generate 
   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
   >
   > ```prompt
-  > @workspace The current Cobol app has no tests. Can you please create a test plan of the
+  > The current Cobol app has no tests. Can you please create a test plan of the
   > current business logic that I can use to validate with business stakeholders about the current implementation in a file called docs/TESTPLAN.md.
-  >  Later I would like to use this test plan to create unit and integration tests in a node.js app. I am in the middle of transforming the current Cobol app to a node.js app.
+  > Later I would like to use this test plan to create unit and integration tests in a node.js app. I am in the middle of transforming the current Cobol app to a node.js app.
   > The test plan should include the following headings:
   > 1. Test Case ID
   > 2. Test Case Description
