@@ -35,3 +35,11 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Cobol binary files #
+######################
+accountsystem
+
+# Node.js node_modules #
+########################
+src/accounting/node_modules
