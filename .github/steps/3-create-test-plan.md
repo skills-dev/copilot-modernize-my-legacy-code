@@ -1,4 +1,4 @@
-## Step 2: Run the COBOL application and create a test plan to ensure quality of our legacy codebase
+## Step 3: Run the COBOL application and create a test plan to ensure quality of our legacy codebase
 
 In the following activies we will build and run the COBOL accounting application and create a test plan that we can use to ensure the quality of our legacy codebase.
 

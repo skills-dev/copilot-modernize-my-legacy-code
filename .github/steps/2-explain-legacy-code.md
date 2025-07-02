@@ -39,7 +39,7 @@ Create a Mermaid data flow diagram (DFD) that illustrates how data moves through
   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
   >
   > ```prompt
-  > @workspace can you create a sequence diagram of the app showing the data flow of the app. Please create this in mermaid format so that I can render this in the docs/README.md markdown file.
+  > @workspace can you create a sequence diagram of the app showing the data flow of the app. Please create this in mermaid format so that I can render this at the end of the the docs/README.md markdown file.
   > ```
 
 Make sure you can preview the diagram in the `docs/README.md` file.
