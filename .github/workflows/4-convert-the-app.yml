@@ -72,34 +72,42 @@ jobs:
 
       # END: Check practical exercise
 
-      - name: Create comment - step results
-        run: |
-          gh issue comment "$ISSUE_URL" \
-            --body "$COMMENT_BODY" \
-            --edit-last
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMENT_BODY: ${{ steps.build-message-step-results.outputs.updated-text }}
-
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
         run: exit 1
 
-      - name: Build message - step finished
-        id: build-message-step-finish
-        uses: skills/action-text-variables@v2
-        with:
-          template-file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
-          template-vars: |
-            next_step_number: 3
-
-      - name: Update comment - step finished
+      - name: Create comment - step finished - final review next
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body "$ISSUE_BODY"
+            --body-file exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_BODY: ${{ steps.build-message-step-finish.outputs.updated-text }}
+
+  post_review_content:
+    name: Post review content
+    needs: [find_exercise, check_step_work]
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+
+      - name: Get response templates
+        uses: actions/checkout@v4
+        with:
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.6.0
+
+      - name: Create comment - add step content
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file "$REVIEW_FILE"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   finish_exercise:
     name: Finish Exercise

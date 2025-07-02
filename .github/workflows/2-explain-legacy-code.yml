@@ -13,7 +13,7 @@ permissions:
   issues: write
 
 env:
-  REVIEW_FILE: ".github/steps/3-create-test-plan.md"
+  STEP_2_FILE: ".github/steps/3-create-test-plan.md"
 
 jobs:
   find_exercise:
@@ -158,7 +158,7 @@ jobs:
       - name: Create comment - add step content
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body-file "$STEP_3_FILE"
+            --body-file "$STEP_2_FILE"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
