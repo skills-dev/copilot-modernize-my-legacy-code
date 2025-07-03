@@ -48,6 +48,13 @@ jobs:
 
       # START: Check practical exercise
 
+      - name: Check if index.js file exists
+        uses: skills/exercise-toolkit/actions/file-exists@v0.6.0
+        continue-on-error: true
+        id: check-js-file-exists
+        with:
+          file: "src/accounting/index.js"
+
       - name: Convert the legacy COBOL code to Node.js
         id: convert-legacy-cobol
         continue-on-error: true
@@ -67,6 +74,8 @@ jobs:
             step_number: 4
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
+              - description: "Check src/accounting/index.js file exists"
+                passed: ${{ steps.check-js-file-exists.outcome == 'success' }}
               - description: "Check src/accounting/index.js for 'accounting' keyword"
                 passed: ${{ steps.convert-legacy-cobol.outcome == 'success' }}
 
@@ -75,13 +84,6 @@ jobs:
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
         run: exit 1
-
-      - name: Create comment - step finished - final review next
-        run: |
-          gh issue comment "$ISSUE_URL" \
-            --body-file exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   post_review_content:
     name: Post review content
@@ -94,7 +96,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-
       - name: Get response templates
         uses: actions/checkout@v4
         with:
@@ -102,10 +103,22 @@ jobs:
           path: exercise-toolkit
           ref: v0.6.0
 
+      - name: Create comment - step finished - final review next
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create comment - add step content
         run: |
           gh issue comment "$ISSUE_URL" \
             --body-file "$REVIEW_FILE"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Disable current workflow
+        run: gh workflow disable "${{github.workflow}}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -116,16 +129,3 @@ jobs:
     with:
       issue-url: ${{ needs.find_exercise.outputs.issue-url }}
       exercise-title: "Modernize your legacy code with GitHub Copilot"
-
-  disable_workflow:
-    name: Disable this workflow
-    needs: [find_exercise, post_review_content]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Disable current workflow
-        run: gh workflow disable "${{github.workflow}}"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
