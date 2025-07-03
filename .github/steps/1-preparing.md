@@ -1,6 +1,6 @@
 ## Step 1: Help me modernize Copilot
 
-Welcome to Merginton High School's IT team! You've joined at a critical time. The school has been using the same COBOL-based accounting system since the early 1990s to manage student fees, cafeteria accounts, and school supplies purchases. The original programmer retired years ago, and the current IT staff struggles to maintain the system whenever changes are needed.
+Welcome to Mergington High School's IT team! You've joined at a critical time. The school has been using the same COBOL-based accounting system since the early 1990s to manage student fees, cafeteria accounts, and school supplies purchases. The original programmer retired years ago, and the current IT staff struggles to maintain the system whenever changes are needed.
 
 ### 📖 Theory: Educational Legacy Systems Modernization
 
@@ -56,15 +56,19 @@ To get started, we will set up a GitHub Codespace with the necessary tools and e
 
 1. If this is your first time using GitHub Copilot, you will need to accept the usage terms to continue.
 
+<details>
+<summary>Having trouble? 🤷</summary><br/>
+
+- If you don't see the Copilot icon, make sure you have the GitHub Copilot extension installed and enabled.
+- If you don't see the Copilot chat panel or have other issues with it, try reloading the codespace with `Ctrl + Shift + P` (Windows) or `Cmd + Shift + P` (Mac) and selecting **Developer: Reload Window**.
+
+</details>
+
 ### :keyboard: Activity: Use Copilot to help remember a terminal command 🙋
 
-Great work! Now that we are familiar with the app and we know it works, let's ask copilot for help starting a branch so we can do some customizing.
+Great work! Now that we have our working environment set up, let's ask copilot for help starting a branch so we can do some refactoring in the next steps!
 
-1. If not already there, return to VS Code.
-
-1. In the bottom panel, select the **Terminal** tab. On the right side, click the plus `+` sign to create a new terminal window.
-
-   > **Note:** This will avoid stopping the existing debug session that is hosting our web application service.
+1. In the bottom panel, select the **Terminal** tab.
 
 1. Within the new terminal window use the keyboard shortcut `Ctrl + I` (windows) or `Cmd + I` (mac) to bring up **Copilot's Terminal Inline Chat**.
 
@@ -76,12 +80,23 @@ Great work! Now that we are familiar with the app and we know it works, let's as
    > Hey copilot, how can I create and publish a new git branch called modernize-legacy-code?
    > ```
 
-   > **Tip:** This is a simple example, but Copilot is great at providing more tailored commands that might involve loops, pattern matching, file modification, and more! Don't be afraid to ask Copilot for a suggestion. Just remember it is a suggestion and you should always verify it first to be safe.
+   <details>
+   <summary>Having trouble? 🤷</summary><br/>
+
+   Remember, you are supposed to use **Copilot's Terminal Inline Chat** NOT the Copilot Chat panel.
+
+   The Terminal Inline Chat is specifically designed to help with terminal commands.
+
+   Copilot should respond with a command similar to the one below.
 
    ```shell
    git checkout -b modernize-legacy-code
    git push -u origin modernize-legacy-code
    ```
+
+   </details>
+
+
 
 1. Now that we are happy with the command, press the `Run` button to let Copilot run it for us. No need to copy and paste!
 
@@ -92,11 +107,8 @@ Great work! Now that we are familiar with the app and we know it works, let's as
 
 If you don't get feedback, here are some things to check:
 
-- If you don't see the Copilot icon, make sure you have the GitHub Copilot extension installed and enabled.
-- If you don't see the Copilot chat panel, try reloading the codespace or checking your extension settings.
+- Make sure you created the branch with the **exact name** `modernize-legacy-code`. No prefixes or suffixes.
+- Make sure the branch was indeed pushed to your repository. That will trigger the next step.
 - If Copilot doesn't understand your command, try rephrasing it or providing more context.
-- If you encounter any issues with the terminal, make sure you have the correct permissions to create branches in the repository.
-- Make sure you created the branch with the exact name `modernize-legacy-code`. No prefixes or suffixes.
-- Make sure the branch was indeed published to your repository.
 
 </details>
