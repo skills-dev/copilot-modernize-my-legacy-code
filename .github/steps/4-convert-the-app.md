@@ -14,20 +14,20 @@ Let's use GitHub Copilot to do the heavy lifting of converting our COBOL applica
 1. Open your Copilot Chat window and make sure you are using **Agent Mode**.
 1. Provide the following prompt to Copilot to start the conversion process:
 
-  > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-  >
-  > ```prompt
-  > #codebase convert the three separate COBOL legacy files into a single Node.js src/accounting/index.js accounting application.
-  >
-  > Leverage the data flow diagram of the existing COBOL application available in the repository to preserve:
-  > - the original business logic
-  > - data integrity
-  > - menu options of the original application.
-  >
-  > Install all prerequisites to run the Node.js application
-  >
-  > Create a .vscode/launch.json file to run the Node.js application
-  > ```
+    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+    >
+    > ```prompt
+    > #codebase convert the three separate COBOL legacy files into a single Node.js src/accounting/index.js accounting application.
+    >
+    > Leverage the data flow diagram of the existing COBOL application available in the repository to preserve:
+    > - the original business logic
+    > - data integrity
+    > - menu options of the original application.
+    >
+    > Install all prerequisites to run the Node.js application
+    >
+    > Create a .vscode/launch.json file to run the Node.js application
+    > ```
 
 1. Ensure the Node.js application is created in the `src/accounting` directory and that you can run it from the `Run and Debug` sidebar in VS Code.
      <!--- TODO add screenshot -->
@@ -44,13 +44,13 @@ Since we already have a detailed test plan in `docs/TESTPLAN.md`, GitHub Copilot
 1. Open your Copilot Chat window and make sure you are using **Agent Mode**.
 1. Attach the `docs/TESTPLAN.md` file to the chat so Copilot can use it as context.
 1. Provide the following prompt to Copilot to generate unit tests:
-  > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-  >
-  > ```prompt
-  > Write unit tests for the Node.js application that mirror the scenarios in the testplan.
-  > Place the tests in a dedicated test file.
-  > Make sure each test checks the expected behavior described in the COBOL test plan.
-  > ```
+    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+    >
+    > ```prompt
+    > Write unit tests for the Node.js application that mirror the scenarios in the testplan.
+    > Place the tests in a dedicated test file.
+    > Make sure each test checks the expected behavior described in the COBOL test plan.
+    > ```
 1. Copilot Agent Mode should generate unit tests and make sure they run. With it's self-healing capabilities, Copilot should automatically fix any issues that arise during the test generation process.
    > If there are any issues, you can continue chatting with Copilot to refine the tests until they are passing and you are satisfied with the results.
 

@@ -16,7 +16,7 @@ First, take a few minutes to explore the COBOL files in the repository, you will
 
 Let's use GitHub Copilot to help us understand the COBOL code!
 1. Open up Copilot Chat window in the sidebar and select **Agent** Mode. You will use it for the rest of the exercise.
-1. Click "Add Context..." in the Copilot Chat sidebar and click "Files & Folders" then select the `src/cobol` directory. This will put the COBOL files in the prompt context so Copilot will be sure what files you are referring to.
+1. Click **Add Context...** in the Copilot Chat sidebar, select **Files & Folders** then select the `src/` directory. This will put the COBOL files in the prompt context so Copilot will be sure what files you are referring to in the following prompt.
 
 1. Let's Ask Copilot in Agent mode to:
    - Explain the purpose of each file in the context of the school's accounting system
@@ -30,7 +30,7 @@ Let's use GitHub Copilot to help us understand the COBOL code!
    > Document the purpose of each COBOL file, key functions, and any specific business rules related to student accounts.
    > ```
 
-   > 💡 **Tip:** Creating good prompts is a combination of proper context (the `src/cobol` directory we attached), clarity and specificity. Learn more about [Prompt Engineering](https://docs.github.com/en/copilot/concepts/prompt-engineering-for-copilot-chat).
+   > 💡 **Tip:** Creating good prompts is a combination of proper context, clarity and specificity. Learn more about [Prompt Engineering](https://docs.github.com/en/copilot/concepts/prompt-engineering-for-copilot-chat).
 
 
 <details>
@@ -50,7 +50,7 @@ Now that you have a better understanding of the school's accounting system, let'
 >[!NOTE]
 > Notice how we are breaking down the task into smaller steps.
 >
-> You will find that Copilot is more effective when you provide it with specific smaller tasks rather than trying to do everything at once, e.g `Hey Copilot, refactor this COBOL code to Node.js`.
+> You will find that Copilot is more effective when you provide it with specific smaller tasks rather than trying to do everything at once, e.g `Hey Copilot, refactor this COBOL codebase to Node.js`.
 >
 > This is especially true when working on large codebase modernizations and context window limitations come into play.
 
@@ -70,7 +70,7 @@ Let's visualize the data flow with a diagram!
 
 1. In the left sidebar, select the `Source Control` tab and make sure you are making changes on `modernize-legacy-code`branch.
 
-   > **Tip:** Opening a file from the source control area will show the differences to the original rather than simply opening it.
+   > 💡 **Tip:** Opening a file from the source control area will show the differences to the original rather than simply opening it.
 
 1. Find the `docs/README.md` file and press the `+` sign to collect your changes together in the staging area.
 
