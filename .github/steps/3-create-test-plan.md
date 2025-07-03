@@ -20,7 +20,7 @@ Because that is a common task, we have already set up a custom prompt file that 
    > /runCobolApp
    > ```
 
-   <!--- TODO add screenshot -->
+   <!--- TODO: add screenshot -->
    > 🪧 **Note:** You can find the contents of the prompt file in `.github/prompts` directory. You can learn more about prompt files [here](https://code.visualstudio.com/docs/copilot/copilot-customization).
 1. Play with the Cobol App to see how it works!
    - The application will prompt you to select an option from the menu.
@@ -31,9 +31,6 @@ Because that is a common task, we have already set up a custom prompt file that 
 Given the features of our existing legacy accounting system we want to generate a comprehensive test plan that covers all critical functionalities and edge cases.
 
 We will use that test plan to create tests in the Node.js application later.
-
-
-
 
 1. Inside your Copilot Chat window, make sure you are still using **Agent Mode**.
 1. Provide Copilot the specific instructions and requirements for the test plan by typing or pasting the above prompt in the chat input box.
