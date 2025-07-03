@@ -9,24 +9,28 @@ Welcome to Mergington High School's IT team! You've joined at a critical time. T
 
 Many educational institutions still rely on legacy COBOL systems for critical administrative functions. While these systems have reliably managed school finances for decades, they now present significant challenges:
 
-- Few IT staff with COBOL knowledge remain in the education sector
-- Limited integration with modern school management systems and online payment platforms
-- Difficulty supporting new educational programs and fee structures
-- Rising maintenance costs eating into limited school technology budgets
+- ❗ Skill Shortage – Fewer developers today know COBOL, making maintenance difficult and expensive.
+- ❗ Integration Issues – Legacy systems struggle to interface with modern platforms, APIs, and cloud services.
+- ❗ High Maintenance Costs – Old systems and inefficient processes drive up the cost of running and supporting legacy systems
+- ❗ Lack of Agility – Legacy systems are rigid, making it hard to adapt to new business needs or market changes quickly.
+- ❗ Security Risks – Outdated codebases may lack modern security features, leaving systems vulnerable.
 
-Modernizing the school's accounting system will provide numerous benefits:
+**Benefits of Modernizing Legacy Systems**
 
-- Seamless integration with student information systems and online payment portals
-- Better reporting capabilities for administrative decision-making
-- Easier maintenance by the existing IT team
-- Ability to quickly adapt to new educational programs and fee structures
+- ✅ Improved Agility – Easier to adapt and scale with changing business and technology needs.
+- ✅ Cost Efficiency – Modern systems are typically more efficient and require less manual intervention.
+- ✅ Better Integration – Seamless connection with modern tools, APIs, and third-party services.
+- ✅ Enhanced Security – Up-to-date security protocols and compliance with modern standards.
+- ✅ Access to Talent – Easier to hire developers familiar with modern languages and tools.
 
-GitHub Copilot can transform this modernization process by:
+However, companies are often afraid of the initial steps to modernizing their legacy systems.
 
-1. Helping decipher the decades-old COBOL code that lacks documentation
-1. Translating COBOL structures to modern Node.js equivalents
-1. Suggesting modern approaches to student account management
-1. Assisting with test creation to ensure student financial data remains accurate
+GitHub Copilot can help breach that feat and transform this modernization process by:
+
+1. Helping decipher the decades-old COBOL code that lacks documentation.
+1. Assisting with test creation to ensure business logic remains intact.
+1. Translating COBOL structures to modern Node.js equivalents.
+1. Testing the new code to ensure it meets the original system's requirements.
 
 ### ⌨️ Activity: Setting Up Your Environment
 
@@ -95,8 +99,6 @@ Great work! Now that we have our working environment set up, let's ask copilot f
    ```
 
    </details>
-
-
 
 1. Now that we are happy with the command, press the `Run` button to let Copilot run it for us. No need to copy and paste!
 
