@@ -66,7 +66,7 @@ Take a moment to run the application and test suite yourself to ensure everythin
     > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
     >
     > ```prompt
-    > Run your Node.js application and run the test suite and verify tests pass.
+    > Run the Node.js application and run the test suite and verify tests pass.
     > ```
 
 1. Commit the changes to the `src/accounting` directory and push to the `modernize-legacy-code` branch.
