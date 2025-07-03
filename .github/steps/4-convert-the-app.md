@@ -51,7 +51,7 @@ Since we already have a detailed test plan in `docs/TESTPLAN.md`, GitHub Copilot
     > Place the tests in a dedicated test file.
     > Make sure each test checks the expected behavior described in the COBOL test plan.
     > ```
-1. Copilot Agent Mode should generate unit tests and make sure they run. With it's self-healing capabilities, Copilot should automatically fix any issues that arise during the test generation process.
+1. Copilot Agent Mode should generate unit tests and make sure they run. With its self-healing capabilities, Copilot should automatically fix any issues that arise during the test generation process.
    > If there are any issues, you can continue chatting with Copilot to refine the tests until they are passing and you are satisfied with the results.
 
 
