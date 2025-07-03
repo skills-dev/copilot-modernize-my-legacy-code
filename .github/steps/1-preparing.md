@@ -1,6 +1,6 @@
 ## Step 1: Help me modernize Copilot
 
-Welcome to Merginton High School's IT team! You've joined at a critical time. The school has been using the same COBOL-based accounting system since the early 1990s to manage student fees, cafeteria accounts, and school supplies purchases. The original programmer retired years ago, and the current IT staff struggles to maintain the system whenever changes are needed.
+Welcome to Mergington High School's IT team! You've joined at a critical time. The school has been using the same COBOL-based accounting system since the early 1990s to manage student fees, cafeteria accounts, and school supplies purchases. The original programmer retired years ago, and the current IT staff struggles to maintain the system whenever changes are needed.
 
 ### 📖 Theory: Educational Legacy Systems Modernization
 
@@ -9,24 +9,28 @@ Welcome to Merginton High School's IT team! You've joined at a critical time. Th
 
 Many educational institutions still rely on legacy COBOL systems for critical administrative functions. While these systems have reliably managed school finances for decades, they now present significant challenges:
 
-- Few IT staff with COBOL knowledge remain in the education sector
-- Limited integration with modern school management systems and online payment platforms
-- Difficulty supporting new educational programs and fee structures
-- Rising maintenance costs eating into limited school technology budgets
+- ❗ Skill Shortage – Fewer developers today know COBOL, making maintenance difficult and expensive.
+- ❗ Integration Issues – Legacy systems struggle to interface with modern platforms, APIs, and cloud services.
+- ❗ High Maintenance Costs – Old systems and inefficient processes drive up the cost of running and supporting legacy systems
+- ❗ Lack of Agility – Legacy systems are rigid, making it hard to adapt to new business needs or market changes quickly.
+- ❗ Security Risks – Outdated codebases may lack modern security features, leaving systems vulnerable.
 
-Modernizing the school's accounting system will provide numerous benefits:
+**Benefits of Modernizing Legacy Systems**
 
-- Seamless integration with student information systems and online payment portals
-- Better reporting capabilities for administrative decision-making
-- Easier maintenance by the existing IT team
-- Ability to quickly adapt to new educational programs and fee structures
+- ✅ Improved Agility – Easier to adapt and scale with changing business and technology needs.
+- ✅ Cost Efficiency – Modern systems are typically more efficient and require less manual intervention.
+- ✅ Better Integration – Seamless connection with modern tools, APIs, and third-party services.
+- ✅ Enhanced Security – Up-to-date security protocols and compliance with modern standards.
+- ✅ Access to Talent – Easier to hire developers familiar with modern languages and tools.
 
-GitHub Copilot can transform this modernization process by:
+However, companies are often afraid of the initial steps to modernizing their legacy systems.
 
-1. Helping decipher the decades-old COBOL code that lacks documentation
-1. Translating COBOL structures to modern Node.js equivalents
-1. Suggesting modern approaches to student account management
-1. Assisting with test creation to ensure student financial data remains accurate
+GitHub Copilot can help breach that feat and transform this modernization process by:
+
+1. Helping decipher the decades-old COBOL code that lacks documentation.
+1. Assisting with test creation to ensure business logic remains intact.
+1. Translating COBOL structures to modern Node.js equivalents.
+1. Testing the new code to ensure it meets the original system's requirements.
 
 ### ⌨️ Activity: Setting Up Your Environment
 
@@ -42,11 +46,11 @@ To get started, we will set up a GitHub Codespace with the necessary tools and e
 1. Confirm the **Repository** field is your copy of the exercise, not the original, then click the green **Create Codespace** button.
 
    - ✅ Your copy: `/{{{full_repo_name}}}`
-   - ❌ Original: `/skills/getting-started-with-github-copilot`
+   - ❌ Original: `/skills/copilot-modernize-my-legacy-code`
 
 1. Wait a moment for Visual Studio Code to load in your browser.
 
-1. In the left sidebar, click the extensions tab and verify that the `GitHub Copilot` and `Python` extensions are installed and enabled.
+1. In the left sidebar, click the extensions tab and verify that the `GitHub Copilot` and `Cobol` extensions are installed and enabled.
 
    <img width="350" alt="copilot extension for VS Code" src="https://github.com/user-attachments/assets/ef1ef984-17fc-4b20-a9a6-65a866def468" />
 
@@ -56,15 +60,19 @@ To get started, we will set up a GitHub Codespace with the necessary tools and e
 
 1. If this is your first time using GitHub Copilot, you will need to accept the usage terms to continue.
 
+<details>
+<summary>Having trouble? 🤷</summary><br/>
+
+- If you don't see the Copilot icon, make sure you have the GitHub Copilot extension installed and enabled.
+- If you don't see the Copilot chat panel or have other issues with it, try reloading the codespace with `Ctrl + Shift + P` (Windows) or `Cmd + Shift + P` (Mac) and selecting **Developer: Reload Window**.
+
+</details>
+
 ### :keyboard: Activity: Use Copilot to help remember a terminal command 🙋
 
-Great work! Now that we are familiar with the app and we know it works, let's ask copilot for help starting a branch so we can do some customizing.
+Great work! Now that we have our working environment set up, let's ask copilot for help starting a branch so we can do some refactoring in the next steps!
 
-1. If not already there, return to VS Code.
-
-1. In the bottom panel, select the **Terminal** tab. On the right side, click the plus `+` sign to create a new terminal window.
-
-   > **Note:** This will avoid stopping the existing debug session that is hosting our web application service.
+1. In the bottom panel, select the **Terminal** tab.
 
 1. Within the new terminal window use the keyboard shortcut `Ctrl + I` (windows) or `Cmd + I` (mac) to bring up **Copilot's Terminal Inline Chat**.
 
@@ -76,12 +84,21 @@ Great work! Now that we are familiar with the app and we know it works, let's as
    > Hey copilot, how can I create and publish a new git branch called modernize-legacy-code?
    > ```
 
-   > **Tip:** This is a simple example, but Copilot is great at providing more tailored commands that might involve loops, pattern matching, file modification, and more! Don't be afraid to ask Copilot for a suggestion. Just remember it is a suggestion and you should always verify it first to be safe.
+   <details>
+   <summary>Having trouble? 🤷</summary><br/>
+
+   Remember, you are supposed to use **Copilot's Terminal Inline Chat** NOT the Copilot Chat panel.
+
+   The Terminal Inline Chat is specifically designed to help with terminal commands.
+
+   Copilot should respond with a command similar to the one below.
 
    ```shell
    git checkout -b modernize-legacy-code
    git push -u origin modernize-legacy-code
    ```
+
+   </details>
 
 1. Now that we are happy with the command, press the `Run` button to let Copilot run it for us. No need to copy and paste!
 
@@ -92,11 +109,8 @@ Great work! Now that we are familiar with the app and we know it works, let's as
 
 If you don't get feedback, here are some things to check:
 
-- If you don't see the Copilot icon, make sure you have the GitHub Copilot extension installed and enabled.
-- If you don't see the Copilot chat panel, try reloading the codespace or checking your extension settings.
+- Make sure you created the branch with the **exact name** `modernize-legacy-code`. No prefixes or suffixes.
+- Make sure the branch was indeed pushed to your repository. That will trigger the next step.
 - If Copilot doesn't understand your command, try rephrasing it or providing more context.
-- If you encounter any issues with the terminal, make sure you have the correct permissions to create branches in the repository.
-- Make sure you created the branch with the exact name `modernize-legacy-code`. No prefixes or suffixes.
-- Make sure the branch was indeed published to your repository.
 
 </details>

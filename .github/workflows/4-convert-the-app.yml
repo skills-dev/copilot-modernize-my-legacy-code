@@ -5,7 +5,7 @@ on:
     branches:
       - "modernize-legacy-code"
     paths:
-      - "src/accounting/*.js"
+      - "src/**/*.js"
 
 permissions:
   contents: write
@@ -48,13 +48,30 @@ jobs:
 
       # START: Check practical exercise
 
-      - name: Convert the legacy COBOL code to Node.js
-        id: convert-legacy-cobol
+      - name: Check if index.js file exists
+        uses: skills/exercise-toolkit/actions/file-exists@v0.6.0
+        continue-on-error: true
+        id: check-js-file-exists
+        with:
+          file: "src/accounting/index.js"
+
+      - name: Check for credit keyword in index.js
+        id: check-credit-keyword
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: src/accounting/index.js
-          keyphrase: 'accounting'
+          keyphrase: 'credit'
+          minimum-occurrences: 1
+          case-sensitive: false
+
+      - name: Check for debit keyword in index.js
+        id: check-debit-keyword
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: src/accounting/index.js
+          keyphrase: 'debit'
           minimum-occurrences: 1
           case-sensitive: false
 
@@ -67,21 +84,26 @@ jobs:
             step_number: 4
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
-              - description: "Check src/accounting/index.js for 'accounting' keyword"
-                passed: ${{ steps.convert-legacy-cobol.outcome == 'success' }}
+              - description: "Check src/accounting/index.js file exists"
+                passed: ${{ steps.check-js-file-exists.outcome == 'success' }}
+              - description: "Check src/accounting/index.js for 'credit' keyword"
+                passed: ${{ steps.check-credit-keyword.outcome == 'success' }}
+              - description: "Check src/accounting/index.js for 'debit' keyword"
+                passed: ${{ steps.check-debit-keyword.outcome == 'success' }}
 
       # END: Check practical exercise
+      - name: Create comment - step results
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body "$COMMENT_BODY" \
+            --edit-last
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_BODY: ${{ steps.build-message-step-results.outputs.updated-text }}
 
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
         run: exit 1
-
-      - name: Create comment - step finished - final review next
-        run: |
-          gh issue comment "$ISSUE_URL" \
-            --body-file exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   post_review_content:
     name: Post review content
@@ -94,7 +116,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-
       - name: Get response templates
         uses: actions/checkout@v4
         with:
@@ -102,10 +123,22 @@ jobs:
           path: exercise-toolkit
           ref: v0.6.0
 
+      - name: Create comment - step finished - final review next
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create comment - add step content
         run: |
           gh issue comment "$ISSUE_URL" \
             --body-file "$REVIEW_FILE"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Disable current workflow
+        run: gh workflow disable "${{github.workflow}}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -116,16 +149,3 @@ jobs:
     with:
       issue-url: ${{ needs.find_exercise.outputs.issue-url }}
       exercise-title: "Modernize your legacy code with GitHub Copilot"
-
-  disable_workflow:
-    name: Disable this workflow
-    needs: [find_exercise, post_review_content]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Disable current workflow
-        run: gh workflow disable "${{github.workflow}}"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

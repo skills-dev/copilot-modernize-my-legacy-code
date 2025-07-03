@@ -4,23 +4,34 @@ In this step, you'll explore the school's legacy COBOL accounting system to unde
 
 ### ⌨️ Activity: Exploring the School's Legacy Accounting System
 
-1. Take a few minutes to explore the COBOL files in the repository (`main.cob`, `operations.cob`, and `data.cob`)
-1. Open `src/cobol/main.cob`, `src/cobol/operations.cob`, `src/cobol/data.cob` and select "Agent" from the Copilot Chat window.
-1. click "Add Context..." in the Copilot Chat sidebar and click "Open Editors" to add the open COBOL files as context.
-1. Explain the purpose of each file in the context of the school's accounting system:
-   - `main.cob`: This file contains the main program logic for managing student accounts, including user interaction and menu options.
-   - `operations.cob`: This file implements the core operations for processing payments, recording purchases, and managing student balances.
-   - `data.cob`: This file handles data storage and retrieval for student account balances.
-1. Create a docs/README.md file in the repository and document your findings, including:
-   - The purpose of each COBOL file
-   - Key functions and operations performed by the system
-   - Any specific business rules or constraints related to student accounts
-  
-    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-    >
-    > ```prompt
-    > @workspace Create a README.md file in a new /docs directory folder in the repository. Document the purpose of each COBOL file, key functions, and any specific business rules related to student accounts.
-    > ```
+Before we can modernize the school's accounting system, we need to understand how it works.
+
+First, take a few minutes to explore the COBOL files in the repository, you will find them in the `src/cobol` directory.
+
+>[!NOTE]
+> COBOL is a legacy language that was widely used in the 1960s and 1970s for business applications. It has a very different syntax and structure compared to modern programming languages.
+>
+> You may not be familiar with COBOL, but don't worry! GitHub Copilot can help you understand the code and its purpose.
+
+
+Let's use GitHub Copilot to help us understand the COBOL code!
+1. Open up Copilot Chat window in the sidebar and select **Agent** Mode. You will use it for the rest of the exercise.
+1. Click **Add Context...** in the Copilot Chat sidebar, select **Files & Folders** then select the `src/` directory. This will put the COBOL files in the prompt context so Copilot will be sure what files you are referring to in the following prompt.
+
+1. Let's Ask Copilot in Agent mode to:
+   - Explain the purpose of each file in the context of the school's accounting system
+   - Create a `docs/README.md` file and document it's findings, especially the key functions and business requirements
+
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   >
+   > ```prompt
+   > Create a README.md file in a new /docs directory
+   >
+   > Document the purpose of each COBOL file, key functions, and any specific business rules related to student accounts.
+   > ```
+
+   > 💡 **Tip:** Creating good prompts is a combination of proper context, clarity and specificity. Learn more about [Prompt Engineering](https://docs.github.com/en/copilot/concepts/prompt-engineering-for-copilot-chat).
+
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
@@ -34,19 +45,32 @@ In this step, you'll explore the school's legacy COBOL accounting system to unde
 
 ### ⌨️ Activity: Create a data flow diagram
 
-Create a Mermaid data flow diagram (DFD) that illustrates how data moves through the school's accounting system.
+Now that you have a better understanding of the school's accounting system, let's visualize how data flows through it. We can use that later as context for Copilot to help us modernize the code.
 
-  > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-  >
-  > ```prompt
-  > Create a sequence diagram of the app showing the data flow of the app. Please create this in mermaid format so that I can render this at the end of the the docs/README.md markdown file.
-  > ```
+>[!NOTE]
+> Notice how we are breaking down the task into smaller steps.
+>
+> You will find that Copilot is more effective when you provide it with specific smaller tasks rather than trying to do everything at once, e.g `Hey Copilot, refactor this COBOL codebase to Node.js`.
+>
+> This is especially true when working on large codebase modernizations and context window limitations come into play.
 
-Make sure you can preview the diagram in the `docs/README.md` file.
+Let's visualize the data flow with a diagram!
+
+1. Ask Copilot to Create a Mermaid data flow diagram (DFD) that illustrates how data moves through the school's accounting system.
+
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   >
+   > ```prompt
+   > Create a sequence diagram of the app showing the data flow of the app.
+   >
+   > Please create this in mermaid format so that I can render this at the end of the the docs/README.md markdown file.
+   > ```
+
+1. Make sure you can preview the diagram in the `docs/README.md` file.
 
 1. In the left sidebar, select the `Source Control` tab and make sure you are making changes on `modernize-legacy-code`branch.
 
-   > **Tip:** Opening a file from the source control area will show the differences to the original rather than simply opening it.
+   > 💡 **Tip:** Opening a file from the source control area will show the differences to the original rather than simply opening it.
 
 1. Find the `docs/README.md` file and press the `+` sign to collect your changes together in the staging area.
 

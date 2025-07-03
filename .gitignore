@@ -42,4 +42,18 @@ accountsystem
 
 # Node.js node_modules #
 ########################
+node_modules/
 src/accounting/node_modules
+
+# Test coverage files #
+#######################
+coverage/
+*.lcov
+.nyc_output/
+.coverage
+htmlcov/
+.pytest_cache/
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
