@@ -39,7 +39,7 @@ To get started, we will set up a GitHub Codespace with the necessary tools and e
 > [!TIP]
 > You can learn more about current and upcoming features in the [GitHub Copilot Features](https://docs.github.com/en/copilot/about-github-copilot/github-copilot-features) documentation.
 
-1. Left-click the below button to open the **Create Codespace** page in a new tab. Use the default configuration.
+1. Right-click the below button to open the **Create Codespace** page in a new tab. Use the default configuration.
 
    [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/{{full_repo_name}}?quickstart=1)
 
