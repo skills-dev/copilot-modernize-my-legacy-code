@@ -54,6 +54,8 @@ To get started, we will set up a GitHub Codespace with the necessary tools and e
 
    <img width="350" alt="copilot extension for VS Code" src="https://github.com/user-attachments/assets/ef1ef984-17fc-4b20-a9a6-65a866def468" />
 
+   <img width="345" alt="cobol extension for VS Code" src="https://github.com/user-attachments/assets/955aad46-7468-4942-bbd3-d342bcef7642" />
+
 1. At the top of VS Code, locate and click the **Copilot icon** to open a Copilot Chat panel.
 
    <img width="150" alt="image" src="https://github.com/user-attachments/assets/5e64db46-95cb-415d-badc-b6b8677f10c1" />
