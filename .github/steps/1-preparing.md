@@ -39,13 +39,13 @@ To get started, we will set up a GitHub Codespace with the necessary tools and e
 > [!TIP]
 > You can learn more about current and upcoming features in the [GitHub Copilot Features](https://docs.github.com/en/copilot/about-github-copilot/github-copilot-features) documentation.
 
-1. Left-click the below button to open the **Create Codespace** page in a new tab. Use the default configuration.
+1. Right-click the below button to open the **Create Codespace** page in a new tab. Use the default configuration.
 
    [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/{{full_repo_name}}?quickstart=1)
 
 1. Confirm the **Repository** field is your copy of the exercise, not the original, then click the green **Create Codespace** button.
 
-   - ✅ Your copy: `/{{{full_repo_name}}}`
+   - ✅ Your copy: `/{{full_repo_name}}`
    - ❌ Original: `/skills/copilot-modernize-my-legacy-code`
 
 1. Wait a moment for Visual Studio Code to load in your browser.
@@ -53,6 +53,8 @@ To get started, we will set up a GitHub Codespace with the necessary tools and e
 1. In the left sidebar, click the extensions tab and verify that the `GitHub Copilot` and `Cobol` extensions are installed and enabled.
 
    <img width="350" alt="copilot extension for VS Code" src="https://github.com/user-attachments/assets/ef1ef984-17fc-4b20-a9a6-65a866def468" />
+
+   <img width="345" alt="cobol extension for VS Code" src="https://github.com/user-attachments/assets/955aad46-7468-4942-bbd3-d342bcef7642" />
 
 1. At the top of VS Code, locate and click the **Copilot icon** to open a Copilot Chat panel.
 
