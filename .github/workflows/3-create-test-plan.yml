@@ -75,7 +75,6 @@ jobs:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
             step_number: 3
-            passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
               - description: "Check TESTPLAN.md for Test Case ID"
                 passed: ${{ steps.check-test-plan-tc-id.outcome == 'success' }}

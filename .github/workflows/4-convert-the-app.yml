@@ -82,7 +82,6 @@ jobs:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
             step_number: 4
-            passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
               - description: "Check src/accounting/index.js file exists"
                 passed: ${{ steps.check-js-file-exists.outcome == 'success' }}
@@ -92,6 +91,7 @@ jobs:
                 passed: ${{ steps.check-debit-keyword.outcome == 'success' }}
 
       # END: Check practical exercise
+
       - name: Create comment - step results
         run: |
           gh issue comment "$ISSUE_URL" \
