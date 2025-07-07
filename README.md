@@ -1,4 +1,4 @@
-# GitHub Copilot Modernize my Legacy Code
+# Modernize Your Legacy Code with GitHub Copilot
 
 ## Welcome
 
@@ -6,7 +6,7 @@
 - **What you'll learn**: How to leverage GitHub Copilot to refactor and modernize existing code.
 - **What you'll build**: A set of improved code snippets that demonstrate modern coding practices.
 - **Prerequisites**:
-  - Skills exercise: [Getting started with GitHub Copilot](https://github.com/skills/getting-started-with-github-copilot)
+  - Skills exercise: [Getting Started with GitHub Copilot](https://github.com/skills/getting-started-with-github-copilot)
   - Familiarity with [VS Code](https://code.visualstudio.com/)
   - Basic coding principles
 
@@ -25,7 +25,7 @@ In this exercise, you will:
 Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
 
 <!--  (replace-me: Make sure to edit the URL with proper template_owner, template_name, repo name and description)  -->
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills-dev&template_name=copilot-modernize-my-legacy-code&owner=%40me&name=skills-copilot-modernize-my-legacy-code&description=Exercise:+Copilot+Modernize+my+Legacy+Code&visibility=public)
+[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=modernize-your-legacy-code-with-github-copilot&owner=%40me&name=skills-modernize-your-legacy-code-with-github-copilot&description=Exercise:+Modernize+Your+Legacy+Code+with+GitHub+Copilot&visibility=public)
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
