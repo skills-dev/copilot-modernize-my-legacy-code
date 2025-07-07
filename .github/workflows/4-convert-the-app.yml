@@ -18,7 +18,7 @@ env:
 jobs:
   find_exercise:
     name: Find Exercise Issue
-    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.6.0
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
 
   check_step_work:
     name: Check step work
@@ -36,7 +36,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.6.0
+          ref: v0.7.0
 
       - name: Update comment - checking work
         run: |
@@ -49,7 +49,7 @@ jobs:
       # START: Check practical exercise
 
       - name: Check if index.js file exists
-        uses: skills/exercise-toolkit/actions/file-exists@v0.6.0
+        uses: skills/exercise-toolkit/actions/file-exists@v0.7.0
         continue-on-error: true
         id: check-js-file-exists
         with:
@@ -77,12 +77,11 @@ jobs:
 
       - name: Build message - step results
         id: build-message-step-results
-        uses: skills/action-text-variables@v2
+        uses: skills/action-text-variables@v3
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
             step_number: 4
-            passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
               - description: "Check src/accounting/index.js file exists"
                 passed: ${{ steps.check-js-file-exists.outcome == 'success' }}
@@ -92,6 +91,7 @@ jobs:
                 passed: ${{ steps.check-debit-keyword.outcome == 'success' }}
 
       # END: Check practical exercise
+
       - name: Create comment - step results
         run: |
           gh issue comment "$ISSUE_URL" \
@@ -121,7 +121,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.6.0
+          ref: v0.7.0
 
       - name: Create comment - step finished - final review next
         run: |
@@ -145,7 +145,7 @@ jobs:
   finish_exercise:
     name: Finish Exercise
     needs: [find_exercise, post_review_content]
-    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.6.0
+    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.7.0
     with:
       issue-url: ${{ needs.find_exercise.outputs.issue-url }}
       exercise-title: "Modernize your legacy code with GitHub Copilot"
