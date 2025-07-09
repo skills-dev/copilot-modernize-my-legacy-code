@@ -84,7 +84,7 @@ If you don't get feedback, here are some things to check:
 
 </details>
 
-### :keyboard: Create a pull request and merge
+### :keyboard: Activity: Create a pull request and merge
 
 Not much left! Let's create a pull request and merge our changes to `main`.
 
