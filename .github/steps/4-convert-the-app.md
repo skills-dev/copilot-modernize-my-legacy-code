@@ -34,7 +34,6 @@ Let's use GitHub Copilot to do the heavy lifting of converting our COBOL applica
 
 1. Make sure the application works the same as the original COBOL application.
 
-
 ### ⌨️ Activity: Create Unit Tests Based on Our Test Plan
 
 Let's use the test plan we generated earlier as the blueprint for creating comprehensive unit tests. This ensures our modernized code behaves exactly like the original COBOL system.
@@ -96,8 +95,8 @@ Not much left! Let's create a pull request and merge our changes to `main`.
    - For the **base** branch, select `main`.
    - For the **compare** branch, select the `modernize-legacy-code` branch.
    - For the **add a title** field, enter `Modernize my legacy COBOL application to Node.js`.
-   - For the **add a description** field, click the Copilot button and select summary to have one generated.
-     Alternately, you write your own such as:
+   - For the **add a description** field, click the Copilot button and select summary to have one generated. [GitHub Copilot pull request summary docs](https://docs.github.com/en/enterprise-cloud@latest/copilot/using-github-copilot/using-github-copilot-for-pull-requests/creating-a-pull-request-summary-with-github-copilot)
+   - Alternately, you write your own such as:
 
      ```md
      Modernize my legacy COBOL application to Node.js with an explanation of the COBOL code and a test plan.
@@ -106,9 +105,7 @@ Not much left! Let's create a pull request and merge our changes to `main`.
      ```
 
    > ✨ **Bonus:** If your Copilot subscription provides it, you can also use a specialized version of Copilot to [review the changes](https://docs.github.com/en/copilot/using-github-copilot/code-review/using-copilot-code-review?tool=webui).
-
-   > [!NOTE]  
-   > This feature is not available in **GitHub Copilot Free**. [[docs]](https://docs.github.com/en/enterprise-cloud@latest/copilot/using-github-copilot/using-github-copilot-for-pull-requests/creating-a-pull-request-summary-with-github-copilot)
+   > This feature is not available in **GitHub Copilot Free**.
 
 1. Press the green **Create pull request** button.
 1. Scroll down to review the commit history and ensure your changes are present.
